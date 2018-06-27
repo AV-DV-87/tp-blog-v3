@@ -1,9 +1,9 @@
 package fr.gtm.blog.business;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import fr.gtm.blog.dao.ArticleRepository;
 import fr.gtm.blog.domain.Article;
@@ -12,7 +12,6 @@ import fr.gtm.blog.domain.Article;
  * Couche métier de l'application : Gérer les informations des articles,
  * intermédiaire entre la présentation et la persistance.
  */
-@Service
 public class ArticleService {
 
 	/**
@@ -40,6 +39,15 @@ public class ArticleService {
 	 */
 	public List<Article> getArticles() {
 		return this.repo.findAll();
+	}
+
+	public Article read(Integer id) {
+		Article result = null;
+		final Optional<Article> wrapper = this.repo.findById(id);
+		if (wrapper.isPresent()) {
+			result = wrapper.get();
+		}
+		return result;
 	}
 
 	/**
