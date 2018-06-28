@@ -2,8 +2,9 @@ package fr.gtm.blog.domain;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
-public class Author implements Serializable {
+public class Author implements Entity, Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -13,10 +14,16 @@ public class Author implements Serializable {
 
 	private LocalDate subDate;
 
+	private Address address;
+
+	private List<Article> articles;
+
+	@Override
 	public Integer getId() {
 		return id;
 	}
 
+	@Override
 	public void setId(Integer id) {
 		this.id = id;
 	}
@@ -35,6 +42,22 @@ public class Author implements Serializable {
 
 	public void setSubDate(LocalDate subDate) {
 		this.subDate = subDate;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	public List<Article> getArticles() {
+		return articles;
+	}
+
+	public void setArticles(List<Article> articles) {
+		this.articles = articles;
 	}
 
 }

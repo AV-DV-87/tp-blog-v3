@@ -2,7 +2,7 @@ package fr.gtm.blog.domain;
 
 import java.io.Serializable;
 
-public class Address implements Serializable {
+public class Address implements Entity, Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -13,6 +13,8 @@ public class Address implements Serializable {
 	private String postalCode;
 
 	private String line;
+
+	// private Author author;
 
 	public Integer getId() {
 		return id;

@@ -8,14 +8,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import fr.gtm.blog.business.ArticleService;
+import fr.gtm.blog.business.CrudService;
+import fr.gtm.blog.domain.Article;
 
 public class ArticleServlet extends AutowiredServlet {
 
 	private static final long serialVersionUID = 1L;
 
 	@Autowired
-	private ArticleService service;
+	private CrudService<Article> service;
 
 	@Override
 	protected void doGet(HttpServletRequest request,
@@ -31,7 +32,7 @@ public class ArticleServlet extends AutowiredServlet {
 		// Récupérer les paramètres 'title' et 'descr'.
 		final String title = request.getParameter("title");
 		final String description = request.getParameter("descr");
-		this.service.create(title, description);
+		this.service.create(new Article(title, description));
 		response.sendRedirect(
 				this.getServletContext().getContextPath() + "/articles");
 	}
