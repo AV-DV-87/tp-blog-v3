@@ -20,4 +20,25 @@
 			<basic name="description" />
 		</attributes>
 	</entity>
+	
+	<entity class="fr.gtm.blog.domain.Author">
+		<attributes>
+			<id name="id">
+				<generated-value strategy="IDENTITY" />
+			</id>
+			<basic name="name" />
+			<basic name="subDate" />
+		</attributes>
+	</entity>
+	
+	<entity class="fr.gtm.blog.domain.Address">
+		<attributes>
+			<id name="id">
+				<generated-value strategy="IDENTITY" />
+			</id>
+			<basic name="city" />
+			<basic name="postalCode" />
+			<basic name="line" />
+		</attributes>
+	</entity>
 </entity-mappings>
