@@ -16,8 +16,8 @@
 				<input id="title" name="title" />
 			</div>
 			<div>
-				<label for="descr">Description :</label>
-				<input id="descr" name="descr" />
+				<label for="description">Description :</label>
+				<input id="description" name="description" />
 			</div>
 			<button>Valider</button>
 		</form>
