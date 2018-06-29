@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class IndexController {
 //	les annotations peuvent prendre une valeur par défaut
 	// dans ce cas c'est path = portion d'url
-	@RequestMapping("/")
+	@RequestMapping("/articles")
 	public ModelAndView index() {
 		final ModelAndView mav = new ModelAndView("index");
 		return mav;
