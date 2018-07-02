@@ -39,8 +39,8 @@
 	<filter-mapping>
 		<filter-name>Filtre Authentification</filter-name>
 		<url-pattern>/helloworld</url-pattern>
-		<url-pattern>/articles/*</url-pattern>
-		<url-pattern>/manage</url-pattern>
+		<!-- <url-pattern>/articles/*</url-pattern>
+		<url-pattern>/manage</url-pattern> -->
 	</filter-mapping>
 	<filter-mapping>
 		<filter-name>Force UTF8 Filter</filter-name>

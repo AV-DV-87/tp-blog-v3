@@ -17,6 +17,7 @@ au contenu HTML généré en sortie. --%>
 	<h1>Bienvenue sur mon blog !</h1>
 	<h2>
 		<c:url value="/manage.html" var="manageUrl" />
+		<c:url value="/update.html?id=" var="updateUrl" />
 		<a href="${manageUrl}">Créer un nouvel article</a>
 	</h2>
 	<div class="main">
@@ -31,6 +32,7 @@ au contenu HTML généré en sortie. --%>
 					${article.title}&nbsp;
 					<c:url value="/delete.html?id=" var="deleteUrl" />
 					<a href="${deleteUrl}${article.id}">X</a>
+					<a href="${updateUrl}${article.id}">Edit</a>
 				</h2>
 				<p>${article.description}</p>
 			</div>
